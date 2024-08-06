@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    env_file:
+      - ./mongodb.env
+    # volumes:
+      # - ./docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
+      # - ./Docker/Volumes/db:/data/db
+    networks:
+      - freelancer-hub-network
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    env_file:
+      - ./mongo-express.env
+    depends_on:
+      - mongo
+    networks:
+      - freelancer-hub-network
+      
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    depends_on:
+      - mongo
+      - mongo-express
+    networks:
+      - freelancer-hub-network
+  
+  node:
+    build:
+      context: ./backend
+    container_name: node
+    restart: always
+    ports:
+      - 7777:7777
+    volumes:
+      - ./backend:/usr/srv/app
+    depends_on:
+      - mongo
+      - mongo-express
+      - nginx
+    networks:
+      - freelancer-hub-network
+
+networks:
+  freelancer-hub-network:
+    driver: bridge

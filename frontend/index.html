@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>Freelancer Hub</title>
+
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="header-inner">
+        <div class="logo-container">
+          <a href="/">
+            <span class="logo"></span>
+          </a>
+        </div>
+        <!-- <div class="search-freelancers"></div> -->
+        <div class="user-links">
+          <a href="/login" class="link">Login</a>
+          <a href="/register" class="link">Cadastre-se</a>
+          <a href="/project/new" class="btn btn-medium btn-blue btn-publicar-projeto">Publicar projeto</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content-container">
+    <div class="main-content-header">
+      <h1>Freelancers disponíveis</h1>
+      <p>4 freelancers encontrados</p>
+      <a href="/project/new" class="btn btn-medium btn-blue btn-publicar-projeto">Publique um projeto</a>
+    </div>
+
+    <div class="main-content-container-inner">
+      <div class="main-content-aside">
+        <div class="main-content-aside-filter-container">
+          <h3>Palavras-chave</h3>
+  
+          <div class="main-content-aside-filter-form-container">
+            <form id="frmFreelancerSearchBox">
+              <input type="text" id="palavras-chave" placeholder="Ex. Fullstack, Backend">
+              <button type="submit">OK</button>
+            </form>
+          </div>
+  
+          <div class="main-content-aside-filter-categorias-container">
+            <h3>Categorias</h3>
+  
+            <div class="checkbox-lista-categorias-container">
+              <div class="checkbox-container">
+                <label for="categoria-0">
+                  <input type="checkbox" id="categoria-0" checked data-id="0">
+                  <span class="nome-categoria">Todas as categorias</span>
+                </label>
+              </div>
+              <div class="checkbox-container">
+                <label for="categoria-1">
+                  <input type="checkbox" id="categoria-1" data-id="1">
+                  <span class="nome-categoria">Fullstack</span>
+                </label>
+              </div>
+              <div class="checkbox-container">
+                <label for="categoria-2">
+                  <input type="checkbox" id="categoria-2" data-id="2">
+                  <span class="nome-categoria">Backend</span>
+                </label>
+              </div>
+              <div class="checkbox-container">
+                <label for="categoria-3">
+                  <input type="checkbox" id="categoria-3" data-id="3">
+                  <span class="nome-categoria">Frontend</span>
+                </label>
+              </div>
+              <div class="checkbox-container">
+                <label for="categoria-4">
+                  <input type="checkbox" id="categoria-4" data-id="4">
+                  <span class="nome-categoria">Banco de dados</span>
+                </label>
+              </div>
+            </div>
+          </div>
+  
+          <div class="main-content-aside-filter-ranking-container">
+            <h3>Ranking</h3>
+  
+            <div class="checkbox-container">
+              <label for="ranking-0">
+                <input type="checkbox" id="ranking-0" checked data-id="0">
+                <span class="ranking-text">Qualquer ranking</span>
+              </label>
+            </div>
+            <div class="checkbox-container">
+              <label for="ranking-1">
+                <input type="checkbox" id="ranking-1" data-id="1">
+                <span class="ranking-text">5 estrelas</span>
+              </label>
+            </div>
+            <div class="checkbox-container">
+              <label for="ranking-2">
+                <input type="checkbox" id="ranking-2" data-id="2">
+                <span class="ranking-text">Pelo menos 4.5 estrelas</span>
+              </label>
+            </div>
+            <div class="checkbox-container">
+              <label for="ranking-3">
+                <input type="checkbox" id="ranking-3" data-id="3">
+                <span class="ranking-text">Pelo menos 4 estrelas</span>
+              </label>
+            </div>
+            <div class="checkbox-container">
+              <label for="ranking-4">
+                <input type="checkbox" id="ranking-4" data-id="4">
+                <span class="ranking-text">Sem feedback</span>
+              </label>
+            </div>
+          </div>
+  
+          <div class="main-content-aside-filter-ranking-container">
+            <button class="btn btn-small btn-blue">Limpar Filtros</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-content-freelancers">
+        <ul class="freelancers-list">
+          <li class="freelancers-list-item">
+            <div class="freelancers-list-item-image">
+              <img src="img/img-freelancers-list-item-image.png" alt="Freelancer">
+            </div>
+            <div class="freelancers-list-item-data">
+              <div class="header-options">
+                <a href="/register/client" class="btn btn-small btn-green btn-convidar">Convidar</a>
+              </div>
+  
+              <div class="card-data-freelancer">
+                <h2 class="title">
+                  <a href="/user/FreelancerXPTO">Freelancer XPTO</a>
+                </h2>
+  
+                <p class="item-text information">
+                  Ranking:
+                  <b>2</b>
+                  | Projetos concluídos:
+                  <b>114</b>
+                  | Registrado(a) desde:
+                  <b>23/01/2020</b>
+                </p>
+  
+                <p class="item-text titulo-profissional">DESENVOLVEDOR WEB/MOBILE</p>
+              </div>
+  
+              <div class="item-text sobre-mim">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra lectus semper, aliquet lectus vel, placerat leo. Nulla quam justo, porttitor vehicula cursus id, gravida dictum augue. 
+                <br><br>
+                Fusce sem velit, vehicula in justo id, ullamcorper dapibus risus. Aliquam erat volutpat. Curabitur ut leo leo. Praesent maximus vehicula magna porta rutrum. Fusce hendrerit dui vitae molestie aliquam. Duis bibendum vitae felis non efficitur.
+              </div>
+  
+              <p class="item-text habilidades">
+                <a class="habilidade">PHP</a>
+                <a class="habilidade">JavaScript</a>
+                <a class="habilidade">Android</a>
+                <a class="habilidade">JQuery</a>
+              </p>
+            </div>
+          </li>
+          <li class="freelancers-list-item">
+            <div class="freelancers-list-item-image">
+              <img src="img/img-freelancers-list-item-image.png" alt="Freelancer">
+            </div>
+            <div class="freelancers-list-item-data">
+              <div class="header-options">
+                <a href="/register/client" class="btn btn-small btn-green btn-convidar">Convidar</a>
+              </div>
+  
+              <div class="card-data-freelancer">
+                <h2 class="title">
+                  <a href="/user/FreelancerXPTO">Freelancer XPTO</a>
+                </h2>
+  
+                <p class="item-text information">
+                  Ranking:
+                  <b>2</b>
+                  | Projetos concluídos:
+                  <b>114</b>
+                  | Registrado(a) desde:
+                  <b>23/01/2020</b>
+                </p>
+  
+                <p class="item-text titulo-profissional">DESENVOLVEDOR WEB/MOBILE</p>
+              </div>
+  
+              <div class="item-text sobre-mim">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra lectus semper, aliquet lectus vel, placerat leo. Nulla quam justo, porttitor vehicula cursus id, gravida dictum augue. 
+                <br><br>
+                Fusce sem velit, vehicula in justo id, ullamcorper dapibus risus. Aliquam erat volutpat. Curabitur ut leo leo. Praesent maximus vehicula magna porta rutrum. Fusce hendrerit dui vitae molestie aliquam. Duis bibendum vitae felis non efficitur.
+              </div>
+  
+              <p class="item-text habilidades">
+                <a class="habilidade">PHP</a>
+                <a class="habilidade">JavaScript</a>
+                <a class="habilidade">Android</a>
+                <a class="habilidade">JQuery</a>
+              </p>
+            </div>
+          </li>
+          <li class="freelancers-list-item">
+            <div class="freelancers-list-item-image">
+              <img src="img/img-freelancers-list-item-image.png" alt="Freelancer">
+            </div>
+            <div class="freelancers-list-item-data">
+              <div class="header-options">
+                <a href="/register/client" class="btn btn-small btn-green btn-convidar">Convidar</a>
+              </div>
+  
+              <div class="card-data-freelancer">
+                <h2 class="title">
+                  <a href="/user/FreelancerXPTO">Freelancer XPTO</a>
+                </h2>
+  
+                <p class="item-text information">
+                  Ranking:
+                  <b>2</b>
+                  | Projetos concluídos:
+                  <b>114</b>
+                  | Registrado(a) desde:
+                  <b>23/01/2020</b>
+                </p>
+  
+                <p class="item-text titulo-profissional">DESENVOLVEDOR WEB/MOBILE</p>
+              </div>
+  
+              <div class="item-text sobre-mim">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra lectus semper, aliquet lectus vel, placerat leo. Nulla quam justo, porttitor vehicula cursus id, gravida dictum augue. 
+                <br><br>
+                Fusce sem velit, vehicula in justo id, ullamcorper dapibus risus. Aliquam erat volutpat. Curabitur ut leo leo. Praesent maximus vehicula magna porta rutrum. Fusce hendrerit dui vitae molestie aliquam. Duis bibendum vitae felis non efficitur.
+              </div>
+  
+              <p class="item-text habilidades">
+                <a class="habilidade">PHP</a>
+                <a class="habilidade">JavaScript</a>
+                <a class="habilidade">Android</a>
+                <a class="habilidade">JQuery</a>
+              </p>
+            </div>
+          </li>
+          <li class="freelancers-list-item">
+            <div class="freelancers-list-item-image">
+              <img src="img/img-freelancers-list-item-image.png" alt="Freelancer">
+            </div>
+            <div class="freelancers-list-item-data">
+              <div class="header-options">
+                <a href="/register/client" class="btn btn-small btn-green btn-convidar">Convidar</a>
+              </div>
+  
+              <div class="card-data-freelancer">
+                <h2 class="title">
+                  <a href="/user/FreelancerXPTO">Freelancer XPTO</a>
+                </h2>
+  
+                <p class="item-text information">
+                  Ranking:
+                  <b>2</b>
+                  | Projetos concluídos:
+                  <b>114</b>
+                  | Registrado(a) desde:
+                  <b>23/01/2020</b>
+                </p>
+  
+                <p class="item-text titulo-profissional">DESENVOLVEDOR WEB/MOBILE</p>
+              </div>
+  
+              <div class="item-text sobre-mim">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra lectus semper, aliquet lectus vel, placerat leo. Nulla quam justo, porttitor vehicula cursus id, gravida dictum augue. 
+                <br><br>
+                Fusce sem velit, vehicula in justo id, ullamcorper dapibus risus. Aliquam erat volutpat. Curabitur ut leo leo. Praesent maximus vehicula magna porta rutrum. Fusce hendrerit dui vitae molestie aliquam. Duis bibendum vitae felis non efficitur.
+              </div>
+  
+              <p class="item-text habilidades">
+                <a class="habilidade">PHP</a>
+                <a class="habilidade">JavaScript</a>
+                <a class="habilidade">Android</a>
+                <a class="habilidade">JQuery</a>
+              </p>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>2024 - Freelancer Hub. Todos os direitos reservados.</p>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
