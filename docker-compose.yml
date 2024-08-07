@@ -9,11 +9,11 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
-      - backend
+      - node
 
-  backend:
+  node:
     build: ./backend
-    container_name: backend
+    container_name: node
     volumes:
       - ./backend:/usr/src/server
     ports:
