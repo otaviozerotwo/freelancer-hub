@@ -11,6 +11,6 @@ conn();
 
 server.use('/api', routes);
 
-server.listen(7777, () => {
-  console.log('listening on port 7777!');
+server.listen(3000, () => {
+  console.log('listening on port 3000!');
 });

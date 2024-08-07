@@ -1,3 +1,4 @@
+// const { default: mongoose } = require('mongoose');
 const { Freelancer: FreelancerModel } = require('../models/freelancerModel');
 
 const freelancerController = {
@@ -13,6 +14,8 @@ const freelancerController = {
         aboutMe: req.body.aboutMe,
         skills: req.body.skills,
       };
+
+      // await mongoose.connect('mongodb://root:root@127.0.0.1:27017/freelancer_hub');
 
       const response = await FreelancerModel.create(freelancer);
 

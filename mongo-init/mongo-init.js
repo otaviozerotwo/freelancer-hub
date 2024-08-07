@@ -1,17 +1,17 @@
-const { freelancerSchema } = require("../backend/models/freelancerModel");
+db = db.getSiblingDB('freelancer_hub');
 
-freelancerSchema = freelancerSchema.getSiblingDB('freelancer_hub');
+db.createUser({
+  user: "root",
+  pwd: "root",
+  roles: [
+    {
+      role: "readWrite",
+      db: "freelancer_hub"
+    }
+  ]
+});
 
-freelancerSchema.createUser({
-  user: 'root',
-  pwd: 'root',
-  roles: [{
-    role: 'readWrite',
-    freelancerSchema: 'freelancer_hub'
-  }],
-}, );
-
-freelancerSchema.createCollection('freelancer', {
+db.createCollection('freelancer', {
   clusteredIndex: {
     "key": {
       _id: 1
@@ -21,7 +21,7 @@ freelancerSchema.createCollection('freelancer', {
   }
 });
 
-freelancerSchema.getCollection("freelancer").createOne({
+db.freelancer.insertOne({
   _id: ObjectId(),
   name: 'Freelancer XPTO',
   ranking: 2,
