@@ -21,13 +21,13 @@ db.createCollection('freelancer', {
   }
 });
 
-db.freelancer.insertOne({
-  _id: ObjectId(),
-  name: 'Freelancer XPTO',
-  ranking: 2,
-  projectsCompleted: 444,
-  registeredSince: '26/07/2016',
-  professionalTitle: 'ESPECIALISTA EM LOGO/IDENTIDADE VISUAL',
-  aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
-  skills: ['Arte-Final', 'Blender 3D', 'Corel Draw', 'Design 3D']
-});
+// db.freelancer.insertOne({
+//   _id: ObjectId(),
+//   name: 'Freelancer XPTO',
+//   ranking: 2,
+//   projectsCompleted: 444,
+//   registeredSince: '26/07/2016',
+//   professionalTitle: 'ESPECIALISTA EM LOGO/IDENTIDADE VISUAL',
+//   aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+//   skills: ['Arte-Final', 'Blender 3D', 'Corel Draw', 'Design 3D']
+// });
