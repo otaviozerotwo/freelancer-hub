@@ -4,6 +4,7 @@ services:
   nginx:
     build: ./frontend
     container_name: nginx
+    hostname: nginx
     ports:
       - "80:80"
     volumes:
@@ -14,6 +15,9 @@ services:
   node:
     build: ./backend
     container_name: node
+    hostname: node
+    env_file:
+      - ./.env
     volumes:
       - ./backend:/usr/src/server
     ports:
@@ -25,10 +29,14 @@ services:
   mongo:
     image: mongo:latest
     container_name: mongodb
+    hostname: mongodb
     ports:
       - "27017:27017"
-    env_file:
-      - ./mongodb.env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      MONGO_URI: ${MONGO_URI}
     volumes:
       - mongo-data:/data/db
       - ./mongo-init:/docker-entrypoint-initdb.d
@@ -36,10 +44,17 @@ services:
   mongo-express:
     image: mongo-express:latest
     container_name: mongo-express
+    hostname: mongo-express
     ports:
       - "8081:8081"
-    env_file:
-      - ./mongo-express.env
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${ME_CONFIG_MONGODB_ADMINUSERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${ME_CONFIG_MONGODB_ADMINPASSWORD}
+      ME_CONFIG_MONGODB_URL: ${ME_CONFIG_MONGODB_URL}
+      ME_CONFIG_BASICAUTH_USERNAME: ${ME_CONFIG_BASICAUTH_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: ${ME_CONFIG_MONGODB_ENABLE_ADMIN}
+      ME_CONFIG_MONGODB_AUTH_DATABASE: ${ME_CONFIG_MONGODB_AUTH_DATABASE}
     depends_on:
       - mongo
 

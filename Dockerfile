@@ -1,5 +1,6 @@
-# Dockerfile para mongo-express
 FROM mongo-express:latest
+
+RUN apt-get update && apt-get install -y vim
 
 # Copiar o script wait-for-it.sh para o contêiner
 COPY wait-for-it.sh /usr/local/bin/
