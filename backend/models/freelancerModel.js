@@ -37,7 +37,7 @@ const freelancerSchema = new Schema(
   { timestamps: true }
 );
 
-const Freelancer = mongoose.model('Freelancer', freelancerSchema);
+const Freelancer = mongoose.model('Freelancer', freelancerSchema, 'freelancer');
 
 module.exports = {
   Freelancer,
