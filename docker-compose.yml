@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+
+  freelancer-hub-server:
+    build: ./backend
+    container_name: freelancer-hub-server
+    hostname: freelancer-hub-server
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      freelancer-hub-network:
+        ipv4_address: 192.168.56.202
+
+  freelancer-hub-nginx:
+    image: nginx:latest
+    container_name: freelancer-hub-nginx
+    hostname: freelancer-hub-nginx
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      freelancer-hub-network:
+        ipv4_address: 192.168.56.207
+    depends_on:
+      - freelancer-hub-server
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    
+  freelancer-hub-dns:
+    build: ./dns
+    container_name: freelancer-hub-dns
+    hostname: dns
+    restart: always
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    networks:
+      freelancer-hub-network:
+        ipv4_address: 192.168.56.204
+    volumes:
+      - ./dns/hosts:/etc/hosts
+      - ./dns/resolv.conf:/etc/resolv.conf
+  
+networks:
+  freelancer-hub-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.56.0/24
+      
